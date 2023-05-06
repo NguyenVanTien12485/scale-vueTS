@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { ItemInterface } from '@/models/items/Item.interface'
 import ItemComponent from './children/Item.component.vue'
-defineProps<{ items: ItemInterface[] }>()
+import Loader from '@/components/shared/Loader.component.vue'
+
+defineProps<{ items: ItemInterface[], loading: boolean }>()
 
 const emit = defineEmits<{
     (e: 'selectItem', id: number): any
@@ -15,9 +17,10 @@ const onSelectItem = (id: number) => {
 <template>
     <div>
         <h3>
-            Items:
+            Items
         </h3>
-        <ul>
+        <Loader v-show="loading"/>
+        <ul v-show="!loading">
             <ItemComponent v-for="item in items" :key="item.id" :model="item" @selectItem="onSelectItem">
                 {{ item.name }} [{{ item.selected }}]
             </ItemComponent>
