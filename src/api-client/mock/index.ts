@@ -1,7 +1,7 @@
-import { ItemsApiClientInterface } from "../models/items/ItemsApiClient.interface";
+import { ApiClientInterface } from "../models";
 import { itemsApiClient } from "./items";
 // create an instance of our main ApiClient that wraps the mock child clients
-const apiMockClient: ItemsApiClientInterface = {
+const apiMockClient: ApiClientInterface = {
   items: itemsApiClient,
 };
 export { apiMockClient };
