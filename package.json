@@ -11,7 +11,9 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test-watch": "vitest watch",
-    "test-coverage": "vitest run --coverage"
+    "test-coverage": "vitest run --coverage",
+    "with-jsonserver": "vite --config vite.config.jsonserver.ts --mode mock",
+    "json-server-api": "json-server --port 3111 --watch json-server/db.json"
   },
   "dependencies": {
     "vue": "^3.2.47"

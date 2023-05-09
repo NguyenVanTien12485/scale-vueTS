@@ -3,15 +3,6 @@ import vue from "@vitejs/plugin-vue";
 import { fileURLToPath, URL } from "url";
 import type { UserConfig as VitestUserConfigInterface } from 'vitest/config';
 
-const vitestConfig: VitestUserConfigInterface = {
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    exclude: [
-    'node_modules'
-    ]
-  }
-};
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
@@ -25,5 +16,11 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  test: vitestConfig.test,
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    exclude: [
+    'node_modules'
+    ]
+  }
 });
