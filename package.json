@@ -8,6 +8,8 @@
     "dev": "vite --mode mock",
     "build": "vue-tsc --noEmit && vite build --mode production",
     "build-mock": "vue-tsc --noEmit && vite build --mode mock",
+    "build-beta": "vite build --config vite.config.production.ts --mode beta",
+    "start-local": "vite --config vite.config.production.ts --mode localapis",
     "preview": "vite preview",
     "test": "vitest run",
     "test-watch": "vitest watch",

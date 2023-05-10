@@ -1,0 +1,20 @@
+{
+  "global": {
+    "version": 0.1
+  },
+  "httpClient": {
+    "tokenKey": "myapp-token",
+    "clientType": "fetch"
+  },
+  "apiClient": {
+    "type": "live"
+  },
+  "items": {
+    "apiClientOptions": {
+      "endpoints": {
+        "fetchItems": "http://api.localhost:4111/items"
+      },
+      "mockDelay": 0
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "global": {
+    "version": 0.103
+  },
+  "httpClient": {
+    "tokenKey": "myapp-token",
+    "clientType": "fetch"
+  },
+  "apiClient": {
+    "type": "mock"
+  },
+  "items": {
+    "apiClientOptions": {
+      "endpoints": {
+        "fetchItems": "/static/mock-data/items/items.json"
+      },
+      "mockDelay": 250
+    }
+  }
+}

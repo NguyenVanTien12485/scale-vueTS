@@ -1,16 +1,12 @@
 import { ApiClientInterface } from "./models";
 import { apiMockClient } from "./mock";
 import { apiLiveClient } from "./live";
+import { config } from "@/config";
 
-let env: string = "mock";
-// Note: Vite uses import.meta.env (reference: https://vitejs.dev/guide/env-and-mode\.html)
-// optional: you can console.log the content of import.meta.env to inspect its value\s like this: console.log('import.meta.env', JSON.stringify(import.meta.env))
-if (import.meta.env && import.meta.env.VITE_API_CLIENT) {
-  env = import.meta.env.VITE_API_CLIENT.trim();
-}
 // return either the live or the mock client
 let apiClient: ApiClientInterface;
-if (env === "live") {
+if (config.apiClient.type === "live") {
+  // this time we just read our config.apiClient.type
   apiClient = apiLiveClient;
 } else {
   // default is always apiMockClient
